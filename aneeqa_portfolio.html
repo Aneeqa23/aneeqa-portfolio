@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aneeqa Nadeem | Cyber Security Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d1b2a;
+      --teal:    #1b6ca8;
+      --accent:  #00c2cb;
+      --light:   #f0f4f8;
+      --white:   #ffffff;
+      --muted:   #5a6a7a;
+      --border:  #d0dce8;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--light);
+      color: #1a1a2e;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 38px 20px 30px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+    header p.title {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-top: 6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    header nav {
+      margin-top: 16px;
+    }
+    header nav a {
+      color: #a8c8e8;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    header nav a:hover { color: var(--accent); }
+
+    /* ── HERO BAND ── */
+    .hero-band {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 1.05rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── MAIN GRID ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* three-col top section */
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1.3fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--teal);
+      padding: 22px 20px;
+      border-radius: 4px;
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--teal);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .card h3 {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 14px 0 4px;
+    }
+    .card p { font-size: 0.88rem; color: #333; margin-bottom: 6px; }
+    .card ul { padding-left: 16px; margin-bottom: 8px; }
+    .card ul li { font-size: 0.87rem; color: #333; margin-bottom: 3px; }
+
+    /* about – full width */
+    .about-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      padding: 22px 24px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+    .about-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .about-card p { font-size: 0.92rem; color: #333; }
+
+    /* ── INFO CHIPS ── */
+    .info-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .chip {
+      background: var(--navy);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── LINK STYLE ── */
+    .cta-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.83rem;
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--teal);
+    }
+
+    /* ── SKILLS GRID inside card ── */
+    .skill-group { margin-bottom: 10px; }
+    .skill-group strong {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    /* ── PROJECTS GRID (2-col) ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--teal);
+      padding: 18px 18px;
+      border-radius: 4px;
+    }
+    .project-card h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .project-card .lang-badge {
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .project-card p { font-size: 0.85rem; color: #444; }
+
+    /* ── BOTTOM GRID (certs + achievements + contact) ── */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    /* ── PEERS / TESTIMONIALS STYLE for achievements ── */
+    .achievement-item {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .achievement-item strong { font-size: 0.88rem; color: var(--navy); display: block; margin-bottom: 3px; }
+    .achievement-item p { font-size: 0.83rem; color: #444; margin: 0; }
+
+    /* ── CONTACT ── */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 60px;
+      letter-spacing: 0.4px;
+      padding-top: 2px;
+    }
+    .contact-item a {
+      font-size: 0.88rem;
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── LEARNING / INTERESTS ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    /* ── PLATFORMS row ── */
+    .platforms-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .platform-card {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 16px 10px;
+      border-radius: 4px;
+    }
+    .platform-card span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .platform-card small { font-size: 0.75rem; color: #a8c8e8; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 18px;
+      font-size: 0.83rem;
+    }
+    footer span { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Aneeqa Nadeem</h1>
+  <p class="title">Cyber Security Student &nbsp;|&nbsp; Aspiring Ethical Hacker</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO BAND -->
+<div class="hero-band">Cyber Security Student &amp; Aspiring Ethical Hacker</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- ABOUT -->
+  <div class="about-card" id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate Cyber Security student at <strong>COMSATS University Islamabad</strong> (3rd Semester &nbsp;|&nbsp; CGPA: <strong>3.80</strong>) interested in ethical hacking, web application security, vulnerability assessment, penetration testing, and secure software development. I enjoy learning through hands-on projects, CTF competitions, TryHackMe labs, and security research. My goal is to develop strong offensive and defensive security skills and contribute to real-world cybersecurity solutions.</p>
+    <div class="info-chips">
+      <span class="chip">COMSATS University Islamabad</span>
+      <span class="chip">3rd Semester</span>
+      <span class="chip">CGPA: 3.80</span>
+      <span class="chip">BS Cyber Security</span>
+    </div>
+  </div>
+
+  <!-- TOP 3-COL: Portfolio Highlights | Career | Academic -->
+  <div class="top-grid" id="skills">
+
+    <!-- LEFT: Skills -->
+    <div class="card">
+      <h2>Skills</h2>
+
+      <div class="skill-group">
+        <strong>Cyber Security</strong>
+        <ul>
+          <li>Web Application Security</li>
+          <li>Vulnerability Assessment</li>
+          <li>Penetration Testing</li>
+          <li>Cryptography</li>
+          <li>Network Security</li>
+          <li>Security Research</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <strong>Tools</strong>
+        <ul>
+          <li>Burp Suite</li>
+          <li>Nmap</li>
+          <li>Wireshark</li>
+          <li>Hashcat</li>
+          <li>John the Ripper</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <strong>Languages</strong>
+        <ul>
+          <li>Java &nbsp;|&nbsp; Python</li>
+          <li>C++ &nbsp;|&nbsp; HTML</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <strong>Databases</strong>
+        <ul>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MIDDLE: Areas of Interest + Currently Learning -->
+    <div class="card">
+      <h2>Areas of Interest</h2>
+      <ul>
+        <li>Ethical Hacking</li>
+        <li>Penetration Testing</li>
+        <li>Web Security</li>
+        <li>Malware Analysis</li>
+        <li>Threat Intelligence</li>
+        <li>Digital Forensics</li>
+        <li>Secure Coding</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">Currently Learning</h2>
+      <ul>
+        <li>Web Application Penetration Testing</li>
+        <li>Linux System Administration</li>
+        <li>Network Security Fundamentals</li>
+        <li>Cyber Security Internship Practical Training</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: Certifications -->
+    <div class="card">
+      <h2>Certifications</h2>
+
+      <div class="achievement-item">
+        <strong>Cisco – Introduction to Cybersecurity</strong>
+        <p>May 2026</p>
+      </div>
+      <div class="achievement-item">
+        <strong>Alison – Basics of Security Management</strong>
+        <p>January 2026</p>
+      </div>
+      <div class="achievement-item">
+        <strong>GDGoC COMSATS – Speed Coding FA'25</strong>
+        <p>November 2025</p>
+      </div>
+
+      <h2 style="margin-top:18px;">Learning Platforms</h2>
+      <ul>
+        <li>TryHackMe</li>
+        <li>PortSwigger Web Security Academy</li>
+        <li>PicoCTF</li>
+        <li>OverTheWire</li>
+      </ul>
+    </div>
+
+  </div><!-- /top-grid -->
+
+  <!-- PROJECTS -->
+  <div class="card" id="projects" style="margin-bottom:28px; border-top-color: var(--accent);">
+    <h2>Projects</h2>
+    <div class="projects-grid" style="margin-top:14px; margin-bottom:0;">
+
+      <div class="project-card">
+        <h3>Packet Inspection Firewall Simulator</h3>
+        <span class="lang-badge">C++</span>
+        <p>Firewall simulation implementing packet inspection, rule-based filtering, protocol segmentation, threat prioritization, blacklist management, and trace logging using linked lists, circular linked lists, queues, stacks, and priority queues.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Electricity Management System</h3>
+        <span class="lang-badge">Python</span>
+        <p>Console-based billing system with customer registration, bill generation, GST calculations, payment processing, usage tracking, dashboard analytics, and account management.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Blood Bank Management System</h3>
+        <span class="lang-badge">Java GUI</span>
+        <p>Graphical application for managing blood donors, inventory, requests, and records using OOP concepts and Java Swing.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Bank Management System</h3>
+        <span class="lang-badge">Java</span>
+        <p>Banking application supporting account creation, deposits, withdrawals, balance management, transaction processing, and customer handling.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Advanced Calculator</h3>
+        <span class="lang-badge">Java</span>
+        <p>Menu-driven calculator with arithmetic operations, prime number checking, Fibonacci generation, average calculations, table generation, and mathematical utilities.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>String Manipulation Toolkit</h3>
+        <span class="lang-badge">Java</span>
+        <p>Text-processing application featuring palindrome detection, string reversal, password validation, search functionality, and vowel/consonant analysis.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Pattern Generator</h3>
+        <span class="lang-badge">Java</span>
+        <p>Multiple algorithmic pattern generators including pyramids, butterflies, rhombuses, palindromic structures, and hollow patterns.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Recursion Learning Toolkit</h3>
+        <span class="lang-badge">Java</span>
+        <p>Collection of recursive algorithms demonstrating factorials, Fibonacci series, power calculations, summations, and recursive number processing.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM GRID -->
+  <div class="bottom-grid" id="achievements">
+
+    <!-- Achievements -->
+    <div class="card" style="grid-column: span 2;">
+      <h2>Achievements</h2>
+
+      <h3>Certificate of Merit</h3>
+      <p>Received a Certificate of Merit for securing <strong>2nd Position in BS Cyber Security</strong> during the first semester with an SGPA of <strong>3.94</strong>.</p>
+
+      <h3 style="margin-top:14px;">CUI TECH FEST CTF 2025</h3>
+      <p>Participated in an inter-university Capture The Flag competition hosted by COMSATS University Islamabad. Successfully solved beginner reverse engineering challenges involving:</p>
+      <ul style="margin-top:6px;">
+        <li>UPX packed binaries &amp; fake flag detection</li>
+        <li>XOR obfuscation &amp; binary analysis</li>
+        <li>.rodata inspection &amp; reverse engineering workflows</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">GitHub</span>
+        <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">Uni</span>
+        <span style="font-size:0.87rem; color:#333;">COMSATS University Islamabad</span>
+      </div>
+    </div>
+
+  </div><!-- /bottom-grid -->
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 &nbsp;<span>Aneeqa Nadeem</span> &nbsp;|&nbsp; All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
