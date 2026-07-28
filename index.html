@@ -275,6 +275,77 @@
     }
     .platform-card small { font-size: 0.75rem; color: #a8c8e8; }
 
+    /* ── EDUCATION ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .edu-item {
+      background: var(--light);
+      border-left: 3px solid var(--teal);
+      padding: 12px 14px;
+      border-radius: 0 4px 4px 0;
+    }
+    .edu-item strong {
+      font-size: 0.9rem;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .edu-item .edu-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .edu-item p {
+      font-size: 0.83rem;
+      color: #444;
+      margin: 0;
+    }
+
+    /* ── WORKSHOP ITEM ── */
+    .workshop-item {
+      background: var(--light);
+      border-left: 3px solid var(--teal);
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .workshop-item strong {
+      font-size: 0.88rem;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .workshop-item .workshop-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .workshop-item p {
+      font-size: 0.83rem;
+      color: #444;
+      margin: 0;
+    }
+
+    /* ── HOBBY TAGS ── */
+    .hobby-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .hobby-tag {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--navy);
@@ -284,7 +355,18 @@
       font-size: 0.83rem;
     }
     footer span { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .top-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .bottom-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .platforms-row { grid-template-columns: 1fr 1fr; }
+    }
   </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -294,6 +376,8 @@
   <p class="title">Cyber Security Student &nbsp;|&nbsp; Aspiring Ethical Hacker</p>
   <nav>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#achievements">Achievements</a>
@@ -318,6 +402,7 @@
       <span class="chip">BS Cyber Security</span>
     </div>
   </div>
+
   <!-- EXPERIENCE -->
   <div class="card" id="experience" style="margin-bottom:28px; border-top-color: var(--accent);">
     <h2>Experience</h2>
@@ -334,7 +419,30 @@
       <p>Practiced ethical hacking methodologies, penetration testing techniques, and secure development principles within a dedicated security lab setting.</p>
     </div>
   </div>
-  <!-- TOP 3-COL: Portfolio Highlights | Career | Academic -->
+
+  <!-- EDUCATION -->
+  <div class="card" id="education" style="margin-bottom:28px; border-top-color: var(--accent);">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <strong>BS Cyber Security</strong>
+        <div class="edu-meta">2024 – Present &nbsp;|&nbsp; COMSATS University Islamabad</div>
+        <p>CGPA: <strong>3.80</strong> &nbsp;|&nbsp; 3rd Semester<br/>Certificate of Merit – 2nd Position (SGPA: 3.94)</p>
+      </div>
+      <div class="edu-item">
+        <strong>FSc Pre-Medical</strong>
+        <div class="edu-meta">2022 – 2024 &nbsp;|&nbsp; Fazaia Education System School E-9 Base, PAF Complex</div>
+        <p>Grade: <strong>A</strong> &nbsp;|&nbsp; Percentage: <strong>90.1%</strong></p>
+      </div>
+      <div class="edu-item">
+        <strong>Matriculation (SSC)</strong>
+        <div class="edu-meta">2020 – 2022 &nbsp;|&nbsp; Islamabad Model College for Girls F-6/2</div>
+        <p>Grade: <strong>A++</strong> &nbsp;|&nbsp; Percentage: <strong>97.9%</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP 3-COL: Skills | Areas of Interest | Certifications -->
   <div class="top-grid" id="skills">
 
     <!-- LEFT: Skills -->
@@ -441,55 +549,65 @@
 
       <div class="project-card">
         <h3>Ufone Telecom Database Management System</h3>
-        <span class="lang-badge">MySQL • Java</span>
-        <p>Database-driven telecom management system designed to simulate the operations of a telecommunications company. The project manages customer records, SIM registrations, package subscriptions, billing information, service activation/deactivation, and administrative operations through an integrated relational database solution using MySQL and Java.</p>
+        <span class="lang-badge">MySQL · Java · JDBC</span>
+        <p>Database-driven telecom management system simulating real-world operations: customer &amp; SIM registration, package subscriptions, billing, service activation/deactivation, administrative dashboard, CRUD operations, advanced SQL queries, ERD design, and data integrity constraints.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/UFONE-Telecom-Database" target="_blank">View on GitHub →</a>
       </div>
+
       <div class="project-card">
         <h3>Packet Inspection Firewall Simulator</h3>
         <span class="lang-badge">C++</span>
         <p>Firewall simulation implementing packet inspection, rule-based filtering, protocol segmentation, threat prioritization, blacklist management, and trace logging using linked lists, circular linked lists, queues, stacks, and priority queues.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Packet-Inspection-Firewall-Simulator" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Electricity Management System</h3>
         <span class="lang-badge">Python</span>
         <p>Console-based billing system with customer registration, bill generation, GST calculations, payment processing, usage tracking, dashboard analytics, and account management.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Electricity-Management-System" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Blood Bank Management System</h3>
-        <span class="lang-badge">Java GUI</span>
-        <p>Graphical application for managing blood donors, inventory, requests, and records using OOP concepts and Java Swing.</p>
+        <span class="lang-badge">Java (GUI / Swing)</span>
+        <p>Graphical application for managing blood donors, blood inventory, requests, and records using object-oriented programming concepts and Java Swing.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Blood-Bank-Management-System" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Bank Management System</h3>
         <span class="lang-badge">Java</span>
-        <p>Banking application supporting account creation, deposits, withdrawals, balance management, transaction processing, and customer handling.</p>
+        <p>Banking application supporting account creation, deposits, withdrawals, balance management, transaction processing, and customer account handling.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Bank-Management-System" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Advanced Calculator</h3>
         <span class="lang-badge">Java</span>
         <p>Menu-driven calculator with arithmetic operations, prime number checking, Fibonacci generation, average calculations, table generation, and mathematical utilities.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Advanced-Calculator-Java" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>String Manipulation Toolkit</h3>
         <span class="lang-badge">Java</span>
         <p>Text-processing application featuring palindrome detection, string reversal, password validation, search functionality, and vowel/consonant analysis.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/String-Manipulation-Toolkit" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Pattern Generator</h3>
         <span class="lang-badge">Java</span>
-        <p>Multiple algorithmic pattern generators including pyramids, butterflies, rhombuses, palindromic structures, and hollow patterns.</p>
+        <p>Multiple algorithmic pattern generators including pyramids, butterflies, rhombuses, palindromic structures, and hollow patterns to strengthen problem-solving and loop concepts.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Pattern-Generator-Java" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="project-card">
         <h3>Recursion Learning Toolkit</h3>
         <span class="lang-badge">Java</span>
         <p>Collection of recursive algorithms demonstrating factorials, Fibonacci series, power calculations, summations, and recursive number processing.</p>
+        <a class="cta-link" href="https://github.com/Aneeqa23/Recursion-Algorithms-Java" target="_blank">View on GitHub →</a>
       </div>
 
     </div>
@@ -502,16 +620,30 @@
     <div class="card" style="grid-column: span 2;">
       <h2>Achievements</h2>
 
-      <h3>Certificate of Merit</h3>
-      <p>Received a Certificate of Merit for securing <strong>2nd Position in BS Cyber Security</strong> during the first semester with an SGPA of <strong>3.94</strong>.</p>
+      <div class="achievement-item">
+        <strong>Gold Medalist – IKLC</strong>
+        <p>Awarded Gold Medal at the IKLC (Inter-campus / International Knowledge &amp; Learning Competition).</p>
+      </div>
 
-      <h3 style="margin-top:14px;">CUI TECH FEST CTF 2025</h3>
-      <p>Participated in an inter-university Capture The Flag competition hosted by COMSATS University Islamabad. Successfully solved beginner reverse engineering challenges involving:</p>
-      <ul style="margin-top:6px;">
-        <li>UPX packed binaries &amp; fake flag detection</li>
-        <li>XOR obfuscation &amp; binary analysis</li>
-        <li>.rodata inspection &amp; reverse engineering workflows</li>
-      </ul>
+      <div class="achievement-item">
+        <strong>Certificate of Merit – 2nd Position, BS Cyber Security</strong>
+        <p>Received a Certificate of Merit for securing <strong>2nd Position in BS Cyber Security</strong> during the first semester with an outstanding SGPA of <strong>3.94</strong>.</p>
+      </div>
+
+      <div class="achievement-item">
+        <strong>CUI TECH FEST CTF 2025</strong>
+        <p>Participated in an inter-university Capture The Flag competition hosted by COMSATS University Islamabad. Successfully solved beginner reverse engineering challenges involving:</p>
+        <ul style="margin-top:6px;">
+          <li>UPX packed binaries &amp; fake flag detection</li>
+          <li>XOR obfuscation &amp; binary analysis</li>
+          <li>.rodata inspection &amp; reverse engineering workflows</li>
+        </ul>
+      </div>
+
+      <div class="achievement-item">
+        <strong>Inter-House Debating – Multiple Competition Winner</strong>
+        <p>Won multiple inter-house debating competitions throughout school and college, demonstrating strong communication and critical thinking skills.</p>
+      </div>
     </div>
 
     <!-- Contact -->
@@ -524,23 +656,74 @@
       </div>
 
       <div class="contact-item">
-        <span class="contact-label"></span>
-        <span class="contact-label">linkedin.com/in/aneeqa-nadeem-250b563a8/</span>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com</a>
+        <span class="contact-label">Phone</span>
+        <a href="tel:+92335052871">0335-0528-71</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://linkedin.com/in/aneeqa-nadeem-250b563a8/" target="_blank">linkedin.com/in/aneeqa-nadeem</a>
       </div>
 
       <div class="contact-item">
         <span class="contact-label">GitHub</span>
-        <a href="https://github.com/yourusername" target="_blank">github.com/Aneeqa23</a>
+        <a href="https://github.com/Aneeqa23" target="_blank">github.com/Aneeqa23</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-label">Portfolio</span>
+        <a href="https://aneeqa23.github.io/aneeqa-portfolio/" target="_blank">aneeqa23.github.io</a>
       </div>
 
       <div class="contact-item">
         <span class="contact-label">Uni</span>
         <span style="font-size:0.87rem; color:#333;">COMSATS University Islamabad</span>
       </div>
+
+      <h2 style="margin-top:18px; border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:12px;">Languages</h2>
+      <div class="info-chips">
+        <span class="chip">Urdu (Native)</span>
+        <span class="chip">English (Proficient)</span>
+        <span class="chip">Chinese (Basic)</span>
+      </div>
     </div>
 
   </div><!-- /bottom-grid -->
+
+  <!-- WORKSHOPS & HOBBIES -->
+  <div class="two-col">
+    <div class="card" id="workshops">
+      <h2>Workshops &amp; Webinars</h2>
+
+      <div class="workshop-item">
+        <strong>"You Are Easier to Hack Than Your Computer"</strong>
+        <div class="workshop-meta">Wall of Hope Islamabad &nbsp;|&nbsp; Abdullah Nasir (CEO, ISEEWAVES)</div>
+        <p>Covered social engineering tactics, human psychology in cybersecurity, and real-world demonstrations of how attackers exploit trust and urgency.</p>
+      </div>
+
+      <div class="workshop-item">
+        <strong>"Intro to Cyber &amp; Career Path"</strong>
+        <div class="workshop-meta">Tech Hierarchy &nbsp;|&nbsp; February 2025</div>
+        <p>Covered career pathways in cybersecurity, in-demand skills, the importance of industry certifications, and the role of CTF competitions in practical skill development.</p>
+      </div>
+    </div>
+
+    <div class="card" id="hobbies">
+      <h2>Hobbies &amp; Interests</h2>
+      <div class="hobby-tags">
+        <span class="hobby-tag">Debating</span>
+        <span class="hobby-tag">Photography</span>
+        <span class="hobby-tag">Journalling</span>
+        <span class="hobby-tag">Baking</span>
+      </div>
+      <p style="margin-top:14px; font-size:0.87rem; color:#444;">
+        <strong>Debating</strong> – Active debater with multiple competition wins, developing strong public speaking, research, and critical thinking skills.<br/><br/>
+        <strong>Photography</strong> – Passionate about capturing nature and everyday moments, showcasing work through social media.<br/><br/>
+        <strong>Journalling</strong> – Regular journaller focused on reflection, goal-setting, and personal growth.<br/><br/>
+        <strong>Baking</strong> – Enjoy creative baking and experimenting with new recipes as a productive hobby outside academics.
+      </p>
+    </div>
+  </div>
 
 </div><!-- /container -->
 
